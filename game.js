@@ -5,6 +5,7 @@ const score = document.querySelector('.score');
 const gameStatus = document.querySelector('.status');
 const gameHighscore = document.querySelector('.highscore');
 const againBtn = document.querySelector('.again');
+const player = document.querySelector('.player');
 
 let firstFLippedCard;
 let secondFLippedCard;
@@ -15,6 +16,13 @@ let curScore;
 let matchedCards;
 let highscore;
 let winStatus;
+
+// Name Of The Player
+const playerName = function () {
+  const name = prompt("What's your name?") || 'Player1';
+  player.textContent = `Player : ${name}`;
+};
+playerName();
 
 // Initializing
 const init = function (high) {
@@ -31,7 +39,8 @@ const init = function (high) {
   winStatus = '';
 
   score.textContent = curScore;
-  gameStatus.textContent = 'Play !';
+  gameStatus.textContent = 'Play';
+  gameStatus.style.color = '#cbe4ee';
 };
 init(0);
 
@@ -59,13 +68,17 @@ const updateScore = function (point) {
 // Checking -> if the player won or lost
 const winnerCheck = function () {
   if (matchedCards === 8 && curScore > 0) {
-    gameStatus.textContent = 'You won !';
+    gameStatus.textContent = 'You won';
+    gameStatus.style.color = '#f7953352';
+    winStatus = 'Won';
+
     if (curScore > highscore) {
       highscore = curScore;
       gameHighscore.textContent = highscore;
     }
   } else if (curScore <= 0) {
-    gameStatus.textContent = 'You Lost !';
+    gameStatus.textContent = 'You Lost';
+    gameStatus.style.color = '#ef4e7c56';
     winStatus = 'Lost';
   }
 };
@@ -100,7 +113,7 @@ const flipCards = function () {
         updateScore(-2);
 
         lockBoard = false;
-      }, 1300);
+      }, 800);
     }
 
     anyHasFlippend = false;
