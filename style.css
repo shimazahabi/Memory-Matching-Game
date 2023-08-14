@@ -1,0 +1,279 @@
+@font-face {
+  font-family: 'Pixel Coleco';
+  src: url('Pixel\ Coleco.ttf');
+}
+
+@font-face {
+  font-family: 'Megatron Italic';
+  src: url('Megatron Italic.ttf');
+}
+
+@font-face {
+  font-family: 'Outrun future Bold Italic';
+  src: url('Outrun future Bold Italic.ttf');
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* HEADER */
+
+.main-header {
+  margin-top: 3px;
+  background-color: rgba(67, 94, 152, 0.274);
+  border-radius: 30px;
+
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+  grid-column: 1 / -1;
+}
+
+.title {
+  font-family: Pixel Coleco;
+  text-transform: uppercase;
+  font-style: italic;
+  color: rgb(162, 195, 207);
+  text-shadow: 3px 4px 3px rgba(187, 145, 196, 0.336);
+  background-color: rgba(87, 84, 88, 0.222);
+  border: 1px solid rgb(162, 195, 207);
+  border-radius: 30px;
+
+  padding: 15px;
+}
+
+.p-icon {
+  border: 1px solid rgb(162, 195, 207);
+  border-radius: 20px;
+}
+
+.welcome {
+  color: whitesmoke;
+  justify-self: self-end;
+  margin-left: auto;
+  margin-right: 10px;
+  font-family: Pixel Coleco;
+}
+
+/* BODY */
+
+body {
+  color: rgb(50, 51, 60);
+  background-image: url(img/background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  backdrop-filter: blur(2px);
+  padding-bottom: 55px;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  align-items: center;
+
+  align-content: center;
+  justify-content: center;
+
+  gap: 50px;
+}
+
+.game-board,
+.right,
+.left,
+.winner {
+  background-color: rgba(87, 124, 171, 0.436);
+  border: 2px solid rgb(135, 126, 215);
+  border-radius: 25px;
+  margin: 10px auto;
+}
+
+/* CARDS */
+
+.game-board {
+  /* width: fit-content; */
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+
+  align-content: center;
+  justify-content: center;
+
+  align-items: center;
+  justify-items: center;
+
+  perspective: 1000px;
+}
+
+.cards {
+  display: inline-block;
+  width: 100px;
+  height: 120px;
+  position: relative;
+  margin: 10px;
+  box-shadow: 1px 1px 1px rgba(253, 250, 250, 0.3);
+  transform: scale(1);
+
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+}
+
+.front-face,
+.back-face {
+  width: 100%;
+  height: 100%;
+  padding: 3px;
+  position: absolute;
+  border-radius: 10px;
+  background: #282e69c6;
+
+  backface-visibility: hidden;
+}
+
+.back-face {
+  backface-visibility: hidden;
+}
+
+.cards:active {
+  transform: scale(0.97);
+  transition: transform 0.2s;
+}
+
+/* SIDES */
+
+.left {
+  /* background-color: violet; */
+  /* align-self: center;
+  justify-self: center; */
+  font-size: 40px;
+  padding: 50px;
+  font-family: Outrun future Bold Italic;
+  /* color: ; */
+  color: rgb(203, 228, 238);
+  text-shadow: 3px 4px 3px rgba(187, 145, 196, 0.336);
+}
+
+.label-score {
+  /* font-size: 50px; */
+  /* color: azure; */
+  margin-bottom: 30px;
+}
+
+.label-highscore {
+  /* font-size: 50px; */
+  /* color: azure; */
+  /* margin: 20px; */
+}
+
+.right {
+  /* background-color: violet; */
+  /* align-self: center;
+  justify-self: center; */
+  padding: 50px;
+  font-family: Outrun future Bold Italic;
+  font-size: 40px;
+  /* border: 1px solid rgb(162, 195, 207); */
+  /* color: ; */
+}
+
+.status {
+  /* font-size: 50px; */
+  color: azure;
+  margin-bottom: 30px;
+}
+
+.again {
+  box-shadow: 1px 4px 21px 0px #bd84f3;
+  background: linear-gradient(to bottom, #692de0 5%, #580b8b 100%);
+  background-color: #9a23de;
+  border-radius: 37px;
+  border: 4px solid #7216a0bb;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Outrun future Bold Italic;
+  font-size: 35px;
+  padding: 20px 36px;
+  text-decoration: none;
+  text-shadow: 2px 4px 5px #a916b3;
+}
+
+.again:hover {
+  background: linear-gradient(to bottom, #580b8b 5%, #692de0 100%);
+  background-color: #a20dbd;
+}
+
+.again:active {
+  position: relative;
+  top: 1px;
+}
+
+.title {
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: 0.15em solid orange; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: 0.15em; /* Adjust as needed */
+  animation: typing 3.5s steps(40, end), blink 0.8s step-end infinite;
+  margin: 0;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 33%;
+  }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: rgb(128, 0, 255);
+  }
+}
+
+/* .game-board {
+  position: relative;
+}
+
+.star {
+  position: absolute;
+  width: 700px;
+  height: 800px;
+}
+ */
+
+.winner {
+  grid-column: 2;
+  grid-row: 3;
+
+  font-size: 40px;
+  padding: 20px;
+  font-family: Outrun future Bold Italic;
+  color: rgb(203, 228, 238);
+  text-shadow: 3px 4px 3px rgba(187, 145, 196, 0.336);
+
+  align-self: self-start;
+  justify-self: self-start;
+}
+
+.cards.flip {
+  transform: rotateY(180deg);
+}
+
+.front-face {
+  transform: rotateY(180deg);
+}

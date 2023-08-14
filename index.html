@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Memory Matching Game</title>
+    <link href="style.css" rel="stylesheet" />
+    <link href="img/p-icon.png" rel="icon" />
+  </head>
+
+  <body>
+    <div class="container">
+      <header class="main-header">
+        <img
+          class="p-icon"
+          src="img/p-icon.png"
+          alt="icon"
+          width="60px"
+          height="60px"
+        />
+        <h1 class="title">Memory Matching Game</h1>
+        <h2 class="welcome">Welcome Shima !</h2>
+      </header>
+
+      <section class="left">
+        <p class="label-score">Score : <span class="score">20</span></p>
+        <p class="label-highscore">
+          Highscore : <span class="highscore">0</span>
+        </p>
+      </section>
+
+      <div class="game-board">
+        <div class="cards card-1" data-group="card-1">
+          <img class="front-face" src="img/card-1.png" />
+          <img class="back-face" src="img/question-mark.png" />
+        </div>
+        <div class="cards card-2" data-group="card-1">
+          <img class="front-face" src="img/card-1.png" />
+          <img class="back-face" src="img/question-mark.png" />
+        </div>
+
+        <div class="cards card-3" data-group="card-2">
+          <img class="card-2 front-face" src="img/card-2.png" />
+          <img class="card-2 back-face" src="img/question-mark.png" />
+        </div>
+        <div class="cards card-4" data-group="card-2">
+          <img class="card-2 front-face" src="img/card-2.png" />
+          <img class="card-2 back-face" src="img/question-mark.png" />
+        </div>
+
+        <div class="cards card-5" data-group="card-3">
+          <img class="card-3 front-face" src="img/card-3.jpg" />
+          <img class="card-3 back-face" src="img/question-mark.png" />
+        </div>
+        <div class="cards card-6" data-group="card-3">
+          <img class="front-face" src="img/card-3.jpg" />
+          <img class="back-face" src="img/question-mark.png" />
+        </div>
+
+        <div class="cards card-7" data-group="card-4">
+          <img class="front-face" src="img/card-4.jpg" />
+          <img class="back-face" src="img/question-mark.png" />
+        </div>
+        <div class="cards card-8" data-group="card-4">
+          <img class="front-face" src="img/card-4.jpg" />
+          <img class="back-face" src="img/question-mark.png" />
+        </div>
+
+        <div class="cards card-9" data-group="card-5">
+          <img class="front-face" src="img/card-5.png" />
+          <img class="back-face" src="img/question-mark.png" />
+        </div>
+        <div class="cards card-10" data-group="card-5">
+          <img class="front-face" src="img/card-5.png" />
+          <img class="back-face" src="img/question-mark.png" />
+        </div>
+
+        <div class="cards card-11" data-group="card-6">
+          <img class="front-face" src="img/card-6.png" />
+          <img class="back-face" src="img/question-mark.png" />
+        </div>
+        <div class="cards card-12" data-group="card-6">
+          <img class="front-face" src="img/card-6.png" />
+          <img class="back-face" src="img/question-mark.png" />
+        </div>
+
+        <div class="cards card-13" data-group="card-7">
+          <img class="front-face" src="img/card-7.png" />
+          <img class="back-face" src="img/question-mark.png" />
+        </div>
+        <div class="cards card-14" data-group="card-7">
+          <img class="front-face" src="img/card-7.png" />
+          <img class="back-face" src="img/question-mark.png" />
+        </div>
+
+        <div class="cards card-15" data-group="card-8">
+          <img class="front-face" src="img/card-8.png" />
+          <img class="back-face" src="img/question-mark.png" />
+        </div>
+        <div class="cards card-16" data-group="card-8">
+          <img class="front-face" src="img/card-8.png" />
+          <img class="back-face" src="img/question-mark.png" />
+        </div>
+      </div>
+
+      <section class="right">
+        <p class="status">Play !</p>
+        <button class="again">Again !</button>
+      </section>
+    </div>
+    <script src="game.js"></script>
+  </body>
+</html>
